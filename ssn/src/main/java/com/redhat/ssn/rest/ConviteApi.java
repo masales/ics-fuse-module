@@ -1,5 +1,6 @@
 package com.redhat.ssn.rest;
 
+import java.net.InetAddress;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -25,7 +26,7 @@ public class ConviteApi {
     public Response doPost(JsonObject json) {
 
 	try {
-	    logger.info("SSN Received " + json.toString());
+	    logger.info("SSN Received "+InetAddress.getLocalHost().getHostAddress()+" - " + json.toString());
 	    return Response.status(Status.CREATED).entity("SSN RESPONSE " + sdf.format(new Date())).build();
 	} catch (Exception e) {
 	    logger.error(e.getMessage(), e);

@@ -1,5 +1,6 @@
 package com.redhat.sre.rest;
 
+import java.net.InetAddress;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -25,7 +26,7 @@ public class ConviteApi {
     public Response doPost(JsonObject json) {
 
 	try {
-	    logger.info("SRE Received " + json.toString());
+	    logger.info("SRE Received "+InetAddress.getLocalHost().getHostAddress()+" - " + json.toString());
 	    return Response.status(Status.CREATED).entity("SRE RESPONSE " + sdf.format(new Date())).build();
 	} catch (Exception e) {
 	    logger.error(e.getMessage(), e);
