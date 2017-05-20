@@ -1,5 +1,8 @@
 package com.redhat.ssn.rest;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.json.JsonObject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
@@ -15,14 +18,15 @@ import org.slf4j.LoggerFactory;
 public class ConviteApi {
 
     protected Logger logger = LoggerFactory.getLogger(getClass());
-
+    protected SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+    
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public Response doPost(JsonObject json) {
 
 	try {
 	    logger.info("SSN Received " + json.toString());
-	    return Response.status(Status.CREATED).build();
+	    return Response.status(Status.CREATED).entity("SSN RESPONSE " + sdf.format(new Date())).build();
 	} catch (Exception e) {
 	    logger.error(e.getMessage(), e);
 	    return Response.serverError().entity(e.getMessage()).build();
