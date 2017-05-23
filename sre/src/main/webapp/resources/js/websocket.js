@@ -2,7 +2,7 @@
  * websocket functions
  */
 var wsURI = 'ws://' + window.location.host
-		+ '/sre/wsEndpoint';
+		+ '/wsEndpoint';
 var websocket = new WebSocket(wsURI);
 
 $(document)
