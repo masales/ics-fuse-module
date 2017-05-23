@@ -8,15 +8,10 @@ function drawTable(data) {
 function drawRow(rowData) {
 	var row = $("<tr />")
 	$("#dataTable").append(row);
-	row.append($("<td>" + rowData.id + "</td>"));
-	row.append($("<td>" + rowData.brand + "</td>"));
-	row.append($("<td>" + rowData.year + "</td>"));
-	row.append($("<td>" + rowData.color + "</td>"));
-	row.append($("<td>" + rowData.price  + "</td>").priceFormat({
-		prefix: '',
-	    centsSeparator: ',',
-	    thousandsSeparator: '.'
-	}));
-	row.append($("<td>" + rowData.sold + "</td>"));
+	row.append($("<td>" + rowData.gid + "</td>"));
+	row.append($("<td>" + rowData.sequence + "</td>"));
+	row.append($("<td>" + rowData.method + "</td>"));
+	row.append($("<td>" + rowData.attendee + "</td>"));	
+	row.append($("<td>" + rowData.partstat + "</td>"));
 
 }

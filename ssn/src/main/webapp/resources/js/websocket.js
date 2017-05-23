@@ -14,8 +14,8 @@ $(document)
 						displayMessage('Connection is now open. Type a name and click Say Hello to send a message.');
 					};
 					websocket.onmessage = function(event) {
-						displayMessage('The response was received! '
-								+ event.data, 'success');
+						displayMessage('The response was received! ' + event.data, 'success');
+						drawRow(event.data);
 					};
 					websocket.onerror = function(event) { 
 						displayMessage('Error! ' + event.data, 'error');
