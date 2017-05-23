@@ -6,7 +6,11 @@ function drawTable(data) {
 }
 
 function drawRow(rowData) {
+	alert(rowData);
 	var json = JSON.stringify(eval("(" + rowData + ")"));
+	alert(json);
+	alert(JSON.stringify(rowData).gid);
+	alert(json.gid);
 	var row = $("<tr />")
 	$("#dataTable").append(row);
 	row.append($("<td>" + json.gid + "</td>"));
