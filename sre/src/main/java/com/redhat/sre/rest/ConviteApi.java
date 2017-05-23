@@ -4,6 +4,7 @@ import java.net.InetAddress;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.inject.Inject;
 import javax.json.JsonObject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
@@ -21,12 +22,18 @@ public class ConviteApi {
     protected Logger logger = LoggerFactory.getLogger(getClass());
     protected SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 
+    @Inject
+    protected StatusWebsocket ws;
+    
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public Response doPost(JsonObject json) {
 
 	try {
 	    logger.info("SRE Received "+InetAddress.getLocalHost().getHostAddress()+" - " + json.toString());
+	    
+	    ws.notifyClients(json);
+	    
 	    return Response.status(Status.CREATED).entity("SRE RESPONSE " + sdf.format(new Date())).build();
 	} catch (Exception e) {
 	    logger.error(e.getMessage(), e);

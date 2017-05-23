@@ -1,0 +1,47 @@
+body{
+	font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+}
+
+output.message {
+    color: blue;
+    font-style: italic;
+}
+
+output.success {
+    color: green;
+    font-style: normal;
+}
+
+output.error {
+    color: red;
+    font-weight: bold;
+    font-style: normal;
+}
+
+div {
+    padding: 10px;
+}
+
+fieldset {
+    border-radius:10px;
+    padding: 10px;
+}
+
+table {
+	border-collapse: collapse;
+    width: 100%;
+
+}
+th {
+  background: #f8f8f8;
+  font-weight: bold;
+}
+td{
+	text-align: center;
+}
+
+table td, table th {
+    border: 1px solid black;
+    padding: 0;
+}
+

@@ -1,10 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Start Page</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    </head>
-    <body>
-        <h1>Hello World! from SOAP Endpoint</h1>
-    </body>
+<head>
+<title>Demo: Client for Fuse Integration Services</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="resources/css/demo.css" />
+
+<script type="text/javascript" src="resources/js/jquery-3.1.1.js"></script>
+<script type="text/javascript" src="resources/js/websocket.js"></script>
+<script type="text/javascript" src="resources/js/main.js"></script>
+
+</head>
+<body>
+
+	<div>
+		<h2>Response messages to invite</h2>
+		<div class="connect-container">
+			<div>
+				<table id="dataTable">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>BRAND</th>
+							<th>YEAR</th>
+							<th>COLOR</th>
+							<th>PRICE</th>
+							<th>SOLD</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+	</div>
+
+	<div>
+		<fieldset>
+			<legend>Console</legend>
+			<output id="restConsole" class="message"></output>
+		</fieldset>
+	</div>
+
+</body>
 </html>
+
