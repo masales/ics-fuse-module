@@ -1,0 +1,57 @@
+server:
+  port: 8080
+    
+camel:
+  springboot:
+    name: inviteService
+    
+  context: 
+    endpoint: 'inviteService'
+    path: '/api'
+  handler:
+    api:
+      id: 'innviteService'
+      path: '/api-doc'
+      title: 'Client REST API'
+      description: 'InviteService API'
+      version: '1.0.0'
+      contact: 'masales@redhat.com'
+      port: ${SWAGGER_PORT}
+      address: ${SWAGGER_ADDRESS}
+
+logging:
+  config: 'classpath:logback.xml'
+
+management:
+  port: 8082
+
+endpoints:
+  enabled: false
+  health:
+    enabled: true
+    
+mail:
+  port: <SMTP_PORT>
+  host: <SMTP_HOST>
+  username: <SMTP_MAIL_USER>
+  password: <SMTP_MAIL_PASSWORD>
+  mailfrom: <SMTP_MAIL_FROM>            
+  
+config:
+  clients:
+  -
+    name: ssn
+    email: <SSN_MAIL>
+    host: <SSN_MAIL_HOST imap-mail.outlook.com | smtp.gmail.com >
+    port: <SNN_MAIL_PORT>
+    pass: <SNN_MAIL_PASSWORD>
+    url: ssn:8080
+    type: rest
+  -
+    name: sre
+    email: <SRE_MAIL>
+    host: <SRE_MAIL_HOST imap-mail.outlook.com | smtp.gmail.com >
+    port: <SRE_MAIL_PORT>
+    pass: <SRE_MAIL_PASSWORD>
+    url: sre:8080
+    type: rest

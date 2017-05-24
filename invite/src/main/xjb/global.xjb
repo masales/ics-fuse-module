@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jaxb:bindings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" jaxb:extensionBindingPrefixes="xjc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:annox="http://annox.dev.java.net" xsi:schemalocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb http://annox.dev.java.net">
+	<jaxb:globalBindings>
+		<jaxb:serializable uid="-1" />
+		<jaxb:javaType name="java.util.Date" xmlType="xsd:dateTime" parseMethod="com.redhat.DataTypeAdapter.parseDateTime"
+			printMethod="com.redhat.DataTypeAdapter.printDateTime" />
+		<jaxb:javaType name="java.util.Date" xmlType="xsd:date" parseMethod="com.redhat.DataTypeAdapter.parseDate" printMethod="com.redhat.DataTypeAdapter.printDate" />
+	</jaxb:globalBindings>
+
+	<jaxb:bindings schemaLocation="../xsd/envio.xsd" node="xsd:complexType" multiple="true">	
+		<annox:annotate>
+			<annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" />
+		</annox:annotate>
+	</jaxb:bindings>
+
+</jaxb:bindings>

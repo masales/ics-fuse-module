@@ -1,0 +1,22 @@
+server:
+  port: 8080
+    
+camel:
+  springboot:
+    name: conviteService
+  context: 
+    endpoint: 'conviteService'
+    path: '/api'
+  handler:
+    api:
+      id: 'conviteService'
+      path: '/api-doc'
+      title: 'Anbima RI REST API"'
+      description: 'API ConviteService RI da Anbima'
+      version: '1.0.0'
+      contact: 'masales@redhat.com'
+
+endpoints:
+  enabled: false
+  health:
+    enabled: true

@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema elementFormDefault="qualified" targetNamespace="http://service.cliente.com.br/corp/convite" xmlns:xs0="http://service.cliente.com.br/corp/convite" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs1="http://service.cliente.com.br/corp/atributos">
+
+	<element name="convite" type="xs0:Convite"/>
+
+	<element name="callbackConviteRequest">
+		<complexType>
+			<sequence>
+				<element name="event" type="xs0:Event" minOccurs="1" maxOccurs="1" nillable="false"/>
+			</sequence>
+		</complexType>
+	</element>
+
+	<element name="callbackConviteResponse">
+		<complexType>
+			<sequence/>
+		</complexType>
+	</element>
+
+	<complexType name="Convite">
+		<sequence>
+			<element ref="xs0:tos" minOccurs="1" maxOccurs="1"/>
+			<element ref="xs0:client" minOccurs="1" maxOccurs="1"/>
+			<element ref="xs0:event" minOccurs="1" maxOccurs="1"/>
+		</sequence>
+	</complexType>
+
+	<element name="tos" type="xs0:Tos"/>
+	<complexType name="Tos">
+		<sequence>
+			<element ref="xs0:to" minOccurs="1" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+
+	<element name="to" type="xs0:Email"/>
+	<element name="client" type="string"/>
+
+	<element name="status" type="xs0:Status"/>
+	<simpleType name="Status">
+		<restriction base="string">
+			<enumeration value="TENTATIVE"/>
+			<enumeration value="CONFIRMED"/>
+		</restriction>
+	</simpleType>
+
+	<element name="event" type="xs0:Event"/>
+	<complexType name="Event">
+		<sequence>
+		    <element ref="xs0:uid" minOccurs="1" maxOccurs="1"/>
+		    <element ref="xs0:sequence" minOccurs="1" maxOccurs="1"/>
+			<element ref="xs0:status" minOccurs="1" maxOccurs="1"/>
+			<element ref="xs0:dtstart" minOccurs="1" maxOccurs="1"/>
+			<element ref="xs0:dtend" minOccurs="1" maxOccurs="1"/>
+			<element ref="xs0:organizer" minOccurs="1" maxOccurs="1"/>
+			<element ref="xs0:attendee" minOccurs="1" maxOccurs="unbounded"/>
+			<element ref="xs0:description" minOccurs="1" maxOccurs="1"/>
+			<element ref="xs0:location" minOccurs="1" maxOccurs="1"/>
+			<element ref="xs0:summary" minOccurs="1" maxOccurs="1"/>
+		</sequence>
+	</complexType>
+	<element name="dtstart" type="dateTime"/>
+	<element name="dtend" type="dateTime"/>
+	<element name="organizer" type="xs0:Organizer"/>
+	<complexType name="Organizer">
+		<sequence>
+			<element ref="xs0:cn" minOccurs="1" maxOccurs="1"/>
+			<element ref="xs0:mailto" minOccurs="1" maxOccurs="1"/>
+		</sequence>
+	</complexType>
+	<element name="cn" type="string"/>
+	<element name="mailto" type="xs0:Email"/> 
+	<element name="uid" type="string"/>
+
+	<element name="attendee" type="xs0:Attendee"/>
+	<complexType name="Attendee">
+		<sequence>
+			<element ref="xs0:cn" minOccurs="1" maxOccurs="1"/>
+			<element ref="xs0:mailto" minOccurs="1" maxOccurs="1"/>
+			<element ref="xs0:role" minOccurs="1" maxOccurs="1"/>
+			<element ref="xs0:partstat" minOccurs="1" maxOccurs="1"/>
+			<element ref="xs0:rsvp" minOccurs="1" maxOccurs="1"/>
+			<element ref="xs0:cutype" minOccurs="1" maxOccurs="1"/>
+		</sequence>
+	</complexType>
+	<element name="description" type="string"/>
+	<element name="location" type="string"/>
+	<element name="sequence" type="positiveInteger"/>
+	<element name="summary" type="string"/>
+	<element name="role" type="xs0:Role"/>
+	<element name="partstat" type="xs0:Partstat"/>
+	<element name="cutype" type="xs0:Cutype"/>
+	
+	<simpleType name="Role">
+		<restriction base="string">
+			<enumeration value="CHAIR">
+				<annotation>
+					<documentation>Indicates chair of the calendar entity</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="REQ-PARTICIPANT">
+				<annotation>
+					<documentation>Indicates a participant whose participation is required</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="OPT-PARTICIPANT">
+				<annotation>
+					<documentation>Indicates a participant whose participation is optional</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="NON-PARTICIPANT">
+				<annotation>
+					<documentation>Indicates a participant who is copied for information purposes only</documentation>
+				</annotation>
+			</enumeration>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="Partstat">
+		<restriction base="string">
+			<enumeration value="NEEDS-ACTION">
+				<annotation>
+					<documentation>Event needs action</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="ACCEPTED">
+				<annotation>
+					<documentation>Event accepted</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="DECLINED">
+				<annotation>
+					<documentation>Event declined</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="TENTATIVE">
+				<annotation>
+					<documentation>Event tentatively accepted</documentation>
+				</annotation>
+			</enumeration>
+		</restriction>
+	</simpleType>
+	<element name="rsvp" type="xs0:Rsvp"/>
+	<simpleType name="Rsvp">
+		<annotation>
+			<documentation>To specify whether there is an expectation of a favor of a reply from the calendar user specified by the property value.</documentation>
+		</annotation>
+		<restriction base="boolean"/>
+	</simpleType>
+	<simpleType name="Cutype">
+		<annotation>
+			<documentation>To specify the type of calendar user specified by the property.</documentation>
+		</annotation>
+		<restriction base="string">
+			<enumeration value="INDIVIDUAL">
+				<annotation>
+					<documentation>An individual</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="GROUP">
+				<annotation>
+					<documentation>A group of individuals</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="ROOM">
+				<annotation>
+					<documentation>A physical resource</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="RESOURCE">
+				<annotation>
+					<documentation>A room resource</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="UNKNOWN">
+				<annotation>
+					<documentation>Otherwise not known</documentation>
+				</annotation>
+			</enumeration>
+		</restriction>
+	</simpleType>
+
+    <element name="criaConviteRequest">
+        <complexType>
+            <sequence>
+	            <element ref="xs0:convite" minOccurs="1" maxOccurs="1"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="criaConviteResponse">
+        <complexType>
+            <sequence>
+            	<element ref="xs0:uid" minOccurs="1" maxOccurs="1"/>
+            	<element ref="xs0:sequence" minOccurs="1" maxOccurs="1"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="atualizaConviteRequest">
+        <complexType>
+            <sequence>
+	            <element ref="xs0:convite" minOccurs="1" maxOccurs="1"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="atualizaConviteResponse">
+        <complexType>
+            <sequence>
+            	<element ref="xs0:uid" minOccurs="1" maxOccurs="1"/>
+            	<element ref="xs0:sequence" minOccurs="1" maxOccurs="1"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="cancelaConviteRequest">
+        <complexType>
+            <sequence>
+               <element ref="xs0:convite" minOccurs="1" maxOccurs="1"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="cancelaConviteResponse">
+        <complexType>
+            <sequence>
+            	<element ref="xs0:uid" minOccurs="1" maxOccurs="1"/>
+            	<element ref="xs0:sequence" minOccurs="1" maxOccurs="1"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <simpleType name="Email">
+        <restriction base="string">
+            <pattern value="[^@]+@[^\.]+\..+"/>
+        </restriction>
+    </simpleType>
+</schema>

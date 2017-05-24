@@ -1,0 +1,41 @@
+{
+  "tos": {
+    "to": [
+      "<ATTENDEE_MAIL_1>",
+      "<ATTENDEE_MAIL_2>"
+    ]
+  },
+  "client": "client-id",
+  "event": {
+    "uid": "",
+    "sequence": 0,
+    "status": "CONFIRMED",
+    "dtstart": "2017-06-31T14:00:00.370Z",
+    "dtend": "2017-06-31T15:00:00.370Z",
+    "organizer": {
+      "cn": "<COMMON_NAME_ORGANIZER>",
+      "mailto": "<ORGANIZER_MAIL>"
+    },
+    "attendee": [
+      {
+        "cn": "<COMMON_NAME_ATTENDEE_1>",
+        "mailto": "<ATENDEE_MAIL_1>",
+        "role": "CHAIR",
+        "partstat": "NEEDS_ACTION",
+        "rsvp": true,
+        "cutype": "INDIVIDUAL"
+      },
+      {
+        "cn": "<COMMON_NAME_ATTENDEE_2>",
+        "mailto": "<ATTENDEE_MAIL_2>",
+        "role": "CHAIR",
+        "partstat": "NEEDS_ACTION",
+        "rsvp": true,
+        "cutype": "INDIVIDUAL"
+      }
+    ],
+    "description": "reuniao de teste",
+    "location": "Sala 10 10º Andar",
+    "summary": "FIS + ICS + IMAPS + JMS"
+  }
+}

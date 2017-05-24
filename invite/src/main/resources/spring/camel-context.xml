@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Configures the Camel Context -->
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:camel-cxf="http://camel.apache.org/schema/cxf" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="  http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd  http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring-2.18.3.xsd  http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf-2.18.3-spring.xsd">
+	<bean class="org.apache.activemq.camel.component.ActiveMQComponent" id="activemq">
+		<property name="connectionFactory">
+			<bean class="org.apache.activemq.pool.PooledConnectionFactory">
+				<property name="maxConnections" value="10" />
+				<property name="connectionFactory">
+					<bean class="org.apache.activemq.ActiveMQConnectionFactory">
+<!-- 						<property name="brokerURL" value="tcp://localhost:61616" /> -->
+						<property name="brokerURL" value="tcp://broker-amq-tcp:61616" />
+					</bean>
+				</property>
+			</bean>
+		</property>
+		<property name="concurrentConsumers" value="3" />
+		<property name="transacted" value="false" />
+		<property name="acknowledgementMode" value="1" />
+	</bean>
+</beans>
