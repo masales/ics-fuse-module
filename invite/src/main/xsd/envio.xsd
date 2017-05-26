@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema elementFormDefault="qualified" targetNamespace="http://service.cliente.com.br/corp/convite" xmlns:xs0="http://service.cliente.com.br/corp/convite" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs1="http://service.cliente.com.br/corp/atributos">
+<schema elementFormDefault="qualified" targetNamespace="http://service.anbima.com.br/corp/convite" xmlns:xs0="http://service.anbima.com.br/corp/convite" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs1="http://service.anbima.com.br/corp/atributos">
 
 	<element name="convite" type="xs0:Convite"/>
 

@@ -2,7 +2,7 @@
 // Este arquivo foi gerado pela Arquitetura JavaTM para Implementação de Referência (JAXB) de Bind XML, v2.2.11 
 // Consulte <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas as modificações neste arquivo serão perdidas após a recompilação do esquema de origem. 
-// Gerado em: 2017.05.24 às 12:55:46 AM BRT 
+// Gerado em: 2017.05.24 às 01:39:45 AM BRT 
 //
 
 
@@ -27,12 +27,12 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element ref="{http://service.cliente.com.br/corp/convite}cn"/&gt;
- *         &lt;element ref="{http://service.cliente.com.br/corp/convite}mailto"/&gt;
- *         &lt;element ref="{http://service.cliente.com.br/corp/convite}role"/&gt;
- *         &lt;element ref="{http://service.cliente.com.br/corp/convite}partstat"/&gt;
- *         &lt;element ref="{http://service.cliente.com.br/corp/convite}rsvp"/&gt;
- *         &lt;element ref="{http://service.cliente.com.br/corp/convite}cutype"/&gt;
+ *         &lt;element ref="{http://service.anbima.com.br/corp/convite}cn"/&gt;
+ *         &lt;element ref="{http://service.anbima.com.br/corp/convite}mailto"/&gt;
+ *         &lt;element ref="{http://service.anbima.com.br/corp/convite}role"/&gt;
+ *         &lt;element ref="{http://service.anbima.com.br/corp/convite}partstat"/&gt;
+ *         &lt;element ref="{http://service.anbima.com.br/corp/convite}rsvp"/&gt;
+ *         &lt;element ref="{http://service.anbima.com.br/corp/convite}cutype"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;

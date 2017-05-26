@@ -32,7 +32,11 @@ public class ConviteServiceRestRouteBuilder extends AbstractRouteBuilder {
 		// delete - cancelar convite
 		.delete().description("Cancelar convite").type(Convite.class).param().name("body").type(RestParamType.body)
 		.description("Convite a ser cancelado").endParam().responseMessage().code(OK.getStatusCode())
-		.message("Convite cancelado e notificado aos participantes").endResponseMessage().to("direct:cancelarConviteRoute");
+		.message("Convite cancelado e notificado aos participantes").endResponseMessage().to("direct:cancelarConviteRoute")
+		// get - heath
+		.get().description("Monitora a saúde do serviço").responseMessage().code(OK.getStatusCode())
+		.message("Serviço funcionando").endResponseMessage().to("direct:pingConviteRoute")
+		;
 
     }
 
